@@ -8,7 +8,7 @@ function Download(url) {
     axios.get(url).then(({ data }) => {
       let $ = cheerio.load(data)
       let image = [];
-      let title = $('div.allc').find('a').text()
+      let title = $('div.chapter_headpost').find('h1').text()
       $('div.main-reading-area > img').get().map(s => {
         image.push($(s).attr('src'))
       })
