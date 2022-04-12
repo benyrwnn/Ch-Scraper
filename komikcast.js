@@ -19,7 +19,7 @@ function Download(url) {
 
 function Latest(page = 1) {
   return new Promise((res, rej) => {
-    axios.get(`${Base_URL}/project-list/page/${page}/`).then(({ data }) => {
+    axios.get(`${Base_URL}/daftar-komik/page/${page}/?sortby=update`).then(({ data }) => {
       let $ = cheerio.load(data)
       let result = [];
       $('div.list-update_item').get().map(s => {
